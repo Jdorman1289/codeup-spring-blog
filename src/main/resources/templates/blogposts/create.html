@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/partials :: head('Create Post')"></head>
+<body>
+<div id="wrapper">
+    <nav th:replace="partials/partials :: nav"></nav>
+
+
+    <header th:replace="partials/partials :: header('Create Blog Post')"></header>
+    <main class="container">
+
+        <form action="/posts/create" method="post">
+            <div class="form-group">
+                <label for="title">Blog Title</label>
+                <input id="title" name="title" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label for="body">Body</label>
+                <input id="body" name="body" class="form-control" type="textarea">
+            </div>
+            <input type="submit" class="btn btn-dark my-3">
+        </form>
+
+
+    </main>
+    <footer th:replace="partials/partials :: footer"></footer>
+</div>
+<th:block th:replace="partials/partials :: scripts"></th:block>
+</body>

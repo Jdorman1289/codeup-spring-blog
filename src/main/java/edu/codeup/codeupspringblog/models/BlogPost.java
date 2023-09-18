@@ -1,7 +1,18 @@
 package edu.codeup.codeupspringblog.models;
 
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name = "blog_posts")
 public class BlogPost {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
     private String title;
+    @Column(columnDefinition = "TEXT")
     private String body;
 
     public BlogPost(String title, String body) {
